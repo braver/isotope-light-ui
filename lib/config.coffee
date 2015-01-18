@@ -30,11 +30,11 @@ module.exports =
       else
         atom.workspaceView.removeClass('isotope-ui-compact')
 
-    applyTreeColor = () ->
-      if atom.config.get('isotope-light-ui.colorTreeSelection')
-        atom.workspaceView.addClass('isotope-ui-treecolor')
-      else
-        atom.workspaceView.removeClass('isotope-ui-treecolor')
+    # applyTreeColor = () ->
+    #   if atom.config.get('isotope-light-ui.colorTreeSelection')
+    #     atom.workspaceView.addClass('isotope-ui-treecolor')
+    #   else
+    #     atom.workspaceView.removeClass('isotope-ui-treecolor')
 
     applyBackgroundColor = () ->
       color = atom.config.get('isotope-light-ui.backgroundColor')
@@ -116,7 +116,7 @@ module.exports =
       applyFont(atom.config.get('isotope-light-ui.fontFamily'))
       applyFontWeight(atom.config.get('isotope-light-ui.fontWeight'))
       applyCompactness()
-      applyTreeColor()
+      # applyTreeColor()
       applyBackgroundColor()
       applyBackgroundGradient()
       applyBackgroundImage()
@@ -135,8 +135,8 @@ module.exports =
     atom.config.onDidChange 'isotope-light-ui.compactLayout', ->
       applyCompactness()
 
-    atom.config.onDidChange 'isotope-light-ui.colorTreeSelection', ->
-      applyTreeColor()
+    # atom.config.onDidChange 'isotope-light-ui.colorTreeSelection', ->
+    #   applyTreeColor()
 
     atom.config.onDidChange 'isotope-light-ui.backgroundColor', ->
       applyBackgroundColor()

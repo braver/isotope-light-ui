@@ -32,11 +32,11 @@ module.exports =
         (useful on small screens).'
       type: 'boolean'
       default: false
-    colorTreeSelection:
-      description: 'Make the selected file stand out in tree-view.
-        Looks better off when scrollbars always visible (e.g. on Linux)'
-      type: 'boolean'
-      default: true
+    # colorTreeSelection:
+    #   description: 'Make the selected file stand out in tree-view.
+    #     Looks better off when scrollbars always visible (e.g. on Linux)'
+    #   type: 'boolean'
+    #   default: true
     backgroundColor:
       description: 'Experimental: Choose a custom background color (#rgb).'
       type: 'string'
