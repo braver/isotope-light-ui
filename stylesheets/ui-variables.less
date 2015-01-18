@@ -70,7 +70,7 @@
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness + @ui-contrast) / 2.4) );
+@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, (@ui-brightness + @ui-contrast) / 3.3) );
 
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
@@ -99,6 +99,7 @@
 @text-color-warning: @fg-warning;
 @text-color-error:   @fg-error;
 
+@fg-active: contrast(@ui-theme-color, @base-fg, @base-bg);
 
 
 // other required vars
