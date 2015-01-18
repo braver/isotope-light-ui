@@ -7,16 +7,16 @@ module.exports =
     # calculate lighter/darker color
     # http://stackoverflow.com/questions/5560248
     shadeColor = (color, percent) ->
-      # num = parseInt(color.slice(1), 16)
-      # amt = Math.round(2.55 * percent)
-      # R = (num >> 16) + amt
-      # G = (num >> 8 & 0x00ff) + amt
-      # B = (num & 0x0000ff) + amt
-      # "#" + (0x1000000 +
-      #   ((if R < 255 then (if R < 1 then 0 else R) else 255)) * 0x10000 +
-      #   ((if G < 255 then (if G < 1 then 0 else G) else 255)) * 0x100 +
-      #   ((if B < 255 then (if B < 1 then 0 else B) else 255))
-      #   ).toString(16).slice(1)
+      num = parseInt(color.slice(1), 16)
+      amt = Math.round(2.55 * percent)
+      R = (num >> 16) + amt
+      G = (num >> 8 & 0x00ff) + amt
+      B = (num & 0x0000ff) + amt
+      "#" + (0x1000000 +
+        ((if R < 255 then (if R < 1 then 0 else R) else 255)) * 0x10000 +
+        ((if G < 255 then (if G < 1 then 0 else G) else 255)) * 0x100 +
+        ((if B < 255 then (if B < 1 then 0 else B) else 255))
+        ).toString(16).slice(1)
 
     applyFont = (font) ->
       document.querySelector('body').setAttribute('isotope-ui-font', font)
@@ -37,14 +37,13 @@ module.exports =
         atom.workspaceView.removeClass('isotope-ui-treecolor')
 
     applyBackgroundColor = () ->
-      console.log(0)
       color = atom.config.get('isotope-light-ui.backgroundColor')
       if atom.config.get('isotope-light-ui.backgroundGradient')
         if color isnt ''
           color1 = shadeColor(color, 12)
           color2 = shadeColor(color, -12)
           gradient = 'linear-gradient(' + color1 + ' 0%, ' + color2 + ' 100%)'
-          atom.workspaceView.addClass('isotope-light-ui-bg-color')
+          atom.workspaceView.addClass('isotope-ui-bg-color')
           atom.workspaceView.css(
             'backgroundImage',
             gradient
