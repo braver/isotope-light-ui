@@ -1,11 +1,11 @@
 {
-  "name": "isotope-ui",
-  "main": "lib/isotope-ui",
+  "name": "isotope-light-ui",
+  "main": "lib/isotope-light-ui",
   "theme": "ui",
-  "version": "1.1.4",
-  "description": "A clean UI theme, adapts to any syntax theme.",
+  "version": "0.0.0",
+  "description": "A clean and light UI theme, adapts to any syntax theme.",
   "license": "MIT",
-  "repository": "https://github.com/braver/isotope-ui",
+  "repository": "https://github.com/braver/isotope-light-ui",
   "engines": {
     "atom": ">0.50.0"
   }
