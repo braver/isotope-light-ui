@@ -53,7 +53,7 @@ module.exports =
       description: 'The path to an image from your computer or
        the internets (e.g. hubblesite.org or unsplash.com).'
       type: 'string'
-      default: 'atom://isotope-ui/resources/images/raket.jpg'
+      default: 'atom://isotope-light-ui/resources/images/raket.jpg'
     gutterStyle:
       description: 'Turn off to relegate gutter styling to syntax theme.'
       type: 'boolean'
