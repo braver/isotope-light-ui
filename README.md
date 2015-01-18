@@ -10,13 +10,13 @@ It's also flexible: you can configure typography, background (images even) and a
 
 Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-ui](https://github.com/atom/one-dark-ui) theme that Isotope was forked from.
 
-![flat background](https://github.com/braver/isotope-ui/raw/master/resources/images/flat.png)
+![flat background](https://github.com/braver/isotope-light-ui/raw/master/resources/images/flat.png)
 
-![gradient background](https://github.com/braver/isotope-ui/raw/master/resources/images/gradient.png)
+![gradient background](https://github.com/braver/isotope-light-ui/raw/master/resources/images/gradient.png)
 
-![image background](https://github.com/braver/isotope-ui/raw/master/resources/images/image.png)
+![image background](https://github.com/braver/isotope-light-ui/raw/master/resources/images/image.png)
 
-[More examples](https://github.com/braver/isotope-ui/blob/master/resources/images/examples.md)
+[More examples](https://github.com/braver/isotope-light-ui/blob/master/resources/images/examples.md)
 
 ## Features
 
