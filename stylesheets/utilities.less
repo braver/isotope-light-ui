@@ -1,0 +1,34 @@
+.key-binding {
+  display: inline-block;
+  margin-right: @component-icon-padding;
+  font-family: sans-serif;
+  border-radius: 2px;
+}
+
+.badge {
+  color: @fg-highlight;
+  background: @level-2-bg;
+}
+
+.label {
+  font-weight: @font-weight;
+}
+.label-primary {
+  background: @ui-accent;
+}
+
+.inline-block {
+  margin-right: @modular-scale-s * 1rem;
+}
+.inline-block-tight {
+  margin-right: @modular-scale-xxs * 1rem;
+}
+.inline-block .inline-block {
+  vertical-align: middle;
+}
+
+// TODO: Move to a better place, not sure where it gets used
+.caret {
+  border-top: 5px solid #fff;
+  margin-top: -1px;
+}

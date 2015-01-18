@@ -1,0 +1,55 @@
+atom-panel {
+  &.top,
+  &.right,
+  &.bottom,
+  &.left {
+    background: @level-3-bg;
+  }
+
+  &.modal {
+    background: @level-1-bg;
+    color: @base-fg;
+    padding: @modular-scale-m * 1rem;
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+  }
+}
+
+.panel {
+  &.bordered {
+    border-radius: @component-border-radius;
+  }
+}
+
+.tool-panel.tool-panel {
+  color: @fg-subtle;
+  position: relative;
+  background-color: @tool-panel-background-color;
+
+  &.panel-bottom {
+    background-color: @level-4-bg;
+  }
+
+  &.panel-left {
+
+  }
+
+  &.panel-right {
+
+  }
+}
+
+.inset-panel {
+  position: relative;
+  background-color: @level-1-bg;
+  &.bordered {
+    border-radius: @component-border-radius;
+  }
+  & .panel-heading {
+  }
+}
+
+.panel-heading {
+  color: @base-fg;
+  font-weight: bold;
+  background-color: @panel-heading-background-color;
+}

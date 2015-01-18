@@ -1,0 +1,96 @@
+// text color indicates state, background indicates interaction
+.btn-mixin (@bg-color, @fg-color) {
+
+  @level-0-bg: lighten(@bg-color, @ui-contrast + 12%);
+  @level-1-bg: lighten(@bg-color, @ui-contrast + 6%);
+  @level-2-bg:  darken(@bg-color, @ui-contrast);
+  @level-3-bg:  darken(@bg-color, @ui-contrast + 3%);
+  @level-4-bg:  darken(@bg-color, @ui-contrast + 6%);
+  @level-5-bg:  darken(@bg-color, @ui-contrast + 9%);
+
+  color: @fg-color;
+  background: @level-1-bg;
+  border-radius: @component-border-radius;
+  border: none;
+  box-shadow: 0 0 2px rgba(0,0,0,.2);
+  transition: all .2s .1s;
+
+  padding: 0 @modular-scale-s * 1rem;
+
+  height: @modular-scale-xxl * 1rem;
+  line-height: @modular-scale-xxl * 1rem;
+
+  &.btn-xs {
+    padding: 0 @modular-scale-s * 1rem;
+    height: @modular-scale-l * 1rem;
+    line-height: @modular-scale-l * 1rem;
+  }
+  &.btn-sm {
+    padding: 0 @modular-scale-s * 1rem;
+    height: @modular-scale-xl * 1rem;
+    line-height: @modular-scale-xl * 1rem;
+  }
+  &.btn-lg {
+    padding: 0 @modular-scale-s * 1rem;
+    height: @modular-scale-xxl * 1.333rem;
+    line-height: @modular-scale-xxl * 1.333rem;
+  }
+
+  &:focus,
+  &:hover {
+    color: @fg-color;
+    background: @level-2-bg;
+    transition: all .1s;
+  }
+  &:active {
+    color: @fg-color;
+    background: @level-5-bg;
+  }
+  &.selected {
+    color: @fg-selected;
+    background: @level-2-bg;
+  }
+  &.selected:hover {
+    color: @fg-selected;
+    background: @level-1-bg;
+  }
+}
+
+.btn,
+.btn.icon {
+  .btn-mixin(@button-background-color, @base-fg);
+}
+.btn-variant(@var) {}
+
+.btn.btn-primary {
+  .btn-mixin(@button-background-color, @fg-highlight);
+}
+.btn.btn-info {
+  .btn-mixin(@bg-info, @fg-highlight);
+}
+.btn.btn-success {
+  .btn-mixin(@bg-success, @fg-highlight);
+}
+.btn.btn-warning {
+  .btn-mixin(@bg-warning, @fg-highlight);
+}
+.btn.btn-error {
+  .btn-mixin(@bg-error, @fg-highlight);
+}
+
+
+// Button Group
+
+.btn-group > .btn {
+  border-left-color: @fg-subtle;
+  border-right-color: @fg-subtle;
+  margin-right: 0px;
+}
+.btn-group > .btn:first-child {
+  border-top-left-radius: @component-border-radius;
+  border-bottom-left-radius: @component-border-radius;
+}
+.btn-group > .btn:last-child {
+  border-top-right-radius: @component-border-radius;
+  border-bottom-right-radius: @component-border-radius;
+}

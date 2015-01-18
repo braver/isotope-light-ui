@@ -1,0 +1,171 @@
+@modified-icon-width: @component-icon-size / 2;
+@tab-top-padding: 0;
+@tab-bottom-border-height: 0;
+@tab-border: 0 solid @level-5-bg;
+@tab-max-width: 160px;
+@tab-min-width: @tab-height * 2;
+
+.close-icon-mixin() {
+  right: -12px;
+  margin-right: @modular-scale * @component-padding;
+  margin-top: -7px;
+  text-align: right;
+  top: 50%;
+  transform: scale(0);
+  transition: transform .2s .1s, border .2s .1s, color .2s .1s;
+  width: 14px;
+  height: 14px;
+  z-index: 3;
+  border: none;
+
+  &:before {
+    position: relative;
+    display: block;
+    top: 1px;
+    left: -1px;
+  }
+
+  &:hover {
+    color: @ui-accent;
+    transition: transform .1s, border .1s, color .1s;
+  }
+
+  &:active {
+    opacity: .3;
+  }
+}
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: @tab-bar-background-color;
+
+  margin-top: @modular-scale-xxs * 1rem; // create a small space above tabs
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    max-width: @tab-max-width;
+    min-width: @tab-min-width;
+    height: @tab-height;
+    line-height: @tab-height;
+    font-size: @modular-scale-m * 1rem;
+    padding: 0;
+    margin: 0;
+    color: @tab-text-color;
+    background: transparent;
+    border-right: @tab-border;
+    border-top-left-radius: @component-border-radius;
+    border-top-right-radius: @component-border-radius;
+
+    &:hover {
+      color: @base-fg;
+      .close-icon {
+        transform: scale(1);
+      }
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+      padding: 0  @modular-scale * @component-padding 0  @component-padding;
+    }
+
+    .close-icon {
+      .close-icon-mixin();
+    }
+    &:hover .close-icon {
+      transform: scale(1);
+    }
+  }
+
+  .tab.active {
+    z-index: 1;
+    flex: 2 0 auto;
+    padding-right: @modified-icon-width + 2px;
+    background-color: @tab-background-color-active;
+    color: @base-fg;
+
+    & .close-icon {
+      color: @base-fg;
+      transform: scale(1);
+    }
+
+    &:hover .close-icon {
+      color: @base-fg;
+
+      &:hover {
+        color: @ui-accent;
+      }
+    }
+
+    // Active pane marker
+    atom-pane.active &:before {
+      transform: scaleY(1);
+    }
+
+  }
+
+  .tab.modified {
+    &:not(:hover) .close-icon {
+      .close-icon-mixin();
+      transform: scale(1);
+      &:before {
+        content: "\f052";
+      }
+    }
+
+    &:hover .close-icon {
+      color: inherit;
+      transform: scale(1);
+      &:before {
+        content: "\f052";
+      }
+    }
+    &:hover .close-icon:hover {
+      color: @ui-accent;
+    }
+  }
+
+  .tab.is-dragging {
+    background: darken(@level-2-bg, 6%);
+    border-color: transparent;
+    opacity: .5;
+    & .close-icon,
+    &:before,
+    &:after {
+      visibility: hidden;
+    }
+  }
+
+  .placeholder {
+    margin: 0;
+    height: @tab-height + @tab-top-padding;
+    background: @level-5-bg;
+    pointer-events: none;
+    &:after {
+      top: @tab-height/2 + @tab-top-padding - 5px ;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      border-radius: 0;
+      border: 5px solid;
+      border-color: transparent transparent transparent @level-5-bg;
+      background: transparent;
+    }
+
+    &:last-child {
+      margin-left: -2px;
+
+      &:after {
+        margin-left: -10px;
+        border-color: transparent @level-5-bg transparent transparent;
+      }
+    }
+  }
+}

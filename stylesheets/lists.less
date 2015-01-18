@@ -1,0 +1,176 @@
+//a mixin for creating a number of color variations
+.li-variation-mixin (@class, @color, @hover) {
+  li {
+    &.@{class},
+    &:not(.list-nested-item).@{class},
+    &.list-nested-item.@{class} > .list-item {
+      color: @color;
+      &:hover {
+        color: @hover;
+      }
+    }
+  }
+}
+
+.li-mixin (@color) {
+  li {
+    &,
+    &:not(.list-nested-item),
+    &.list-nested-item > .list-item {
+      min-height: @component-line-height;
+      line-height: @component-line-height;
+      color: @color;
+      transition: color .2s .1s;
+
+      &:hover {
+        color: lighten(@color, 12%);
+        transition: color .1s;
+      }
+
+      &.path-details { // search
+        color: @ui-accent;
+      }
+    }
+  }
+
+  .li-variation-mixin ( status-modified, @fg-modified, lighten(@fg-modified, 12%) );
+  .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
+  .li-variation-mixin ( status-ignored,  @fg-ignored,  lighten(@fg-ignored, 12%) );
+  .li-variation-mixin ( text-subtle,     @fg-subtle,   lighten(@fg-subtle, 12%) );
+  .li-variation-mixin ( text-info,       @fg-info,     lighten(@fg-info, 12%) );
+  .li-variation-mixin ( text-success,    @fg-success,  lighten(@fg-success, 12%) );
+  .li-variation-mixin ( text-warning,    @fg-warning,  lighten(@fg-warning, 12%) );
+  .li-variation-mixin ( text-error,      @fg-error,    lighten(@fg-error, 12%) );
+}
+
+
+.list-group,
+.list-tree {
+
+  .li-mixin (@base-fg);
+
+  li {
+    padding-left: @modular-scale-s * 1rem;
+  }
+
+  .icon {
+    display: inline-block;
+    &:before{
+      height: 100%;
+      line-height: 100%;
+    }
+  }
+  .no-icon {
+    padding-left: @component-icon-size + @component-icon-padding;
+  }
+
+  .status {
+    float: left;
+  }
+
+  .primary-line,
+  .secondary-line {
+    display: inline-block;
+  }
+  .secondary-line {
+    color: @fg-subtle;
+    padding-left: @component-icon-size + @component-icon-padding;
+  }
+
+  .selected {
+    color: @fg-selected;
+
+    &:before {
+      line-height: @component-line-height;
+      min-height: @component-line-height;
+      background-color: @level-4-bg;
+    }
+  }
+}
+
+.select-list ol.list-group {
+  margin: 0;
+
+  li {
+    overflow: hidden; //prevent a stacking issue with keybindings
+    &.two-lines {
+      height: @component-line-height;
+      &.selected .secondary-line {
+        text-shadow: none;
+      }
+    }
+
+    &:hover {
+      color: lighten(@base-fg, 12%);
+    }
+
+    &.selected {
+      color: @fg-selected;
+      background-color: @level-4-bg;
+      &:before{
+        display: none;
+      }
+    }
+  }
+
+  &.mark-active {
+    @active-icon-size: 14px;
+
+    // pad in front of the text where the icon would be We'll pad the non-
+    // active items with a 'fake' icon so other classes can pad the item
+    // without worrying about the icon padding.
+    li:before,
+    li.selected:before {
+      content: '';
+      background-color: transparent;
+      position: static;
+      display: inline-block;
+      left: auto;
+      right: auto;
+      height: @component-line-height;
+      line-height: @component-line-height;
+      width: @active-icon-size;
+      float: left;
+    }
+    > li:not(.active):before {
+      margin-right: @component-icon-padding;
+    }
+    li.active {
+      .octicon(check, @active-icon-size);
+      &:before {
+        margin-right: @component-icon-padding;
+        color: @fg-success;
+        height: @component-line-height;
+        line-height: @component-line-height;
+
+      }
+    }
+  }
+}
+
+.select-list.popover-list {
+  background-color: @overlay-background-color;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
+  padding: @component-padding/2;
+  border-radius: @component-border-radius;
+
+  atom-text-editor.mini {
+    margin-bottom: @component-padding/2;
+  }
+
+  .list-group li {
+    padding-left: @component-padding/2;
+  }
+}
+
+li.ui-draggable-dragging,
+li.ui-sortable-helper {
+  line-height: @component-line-height;
+  height: @component-line-height;
+  border: 0;
+  border-radius: 0;
+  list-style: none;
+  padding: 0 @component-padding;
+  background: @level-2-bg;
+  box-shadow: 0 0 1px @level-5-bg;
+}

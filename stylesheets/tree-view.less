@@ -1,0 +1,80 @@
+.tree-view.list-tree {
+  .li-mixin (@fg-subtle);
+
+  padding: 0;
+  padding-top: @modular-scale-xxs * 1rem + .5rem; // align with tabs
+
+  //necesary to make the selected item background color work for tree-view only
+  li {
+    &.selected,
+    &:not(.list-nested-item).selected,
+    &.list-nested-item.selected > .list-item {
+      color: @base-fg;
+      &:before {
+        border-top-left-radius: @component-border-radius;
+        border-bottom-left-radius: @component-border-radius;
+      }
+    }
+
+    //add these variations in here as well for specicifty
+    .li-variation-mixin ( status-modified, @fg-modified, lighten(@fg-modified, 12%) );
+    .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
+  }
+
+  // hide pointer icons in treeview
+  &.has-collapsable-children {
+    .list-nested-item > .list-item:before {
+      display: none;
+    }
+    .list-nested-item > .list-tree > li,
+    .list-nested-item > .list-group > li {
+      margin-left: 0;
+    }
+  }
+
+  // correct git icon size
+  .icon-file-directory[data-name=".git"] {
+    &:before {
+      top: 2px;
+      font-size: medium;
+    }
+  }
+}
+
+.right {
+  .tree-view.list-tree {
+    li {
+      &.selected,
+      &:not(.list-nested-item).selected,
+      &.list-nested-item.selected > .list-item {
+        &:before {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: @component-border-radius;
+          border-bottom-right-radius: @component-border-radius;
+        }
+      }
+    }
+  }
+}
+
+// optional color tree-view selected item just like tabs
+.isotope-ui-treecolor {
+  .tree-view.list-tree {
+    li {
+      &.selected,
+      &:not(.list-nested-item).selected,
+      &.list-nested-item.selected > .list-item {
+        &:before {
+          background: @ui-theme-color;
+        }
+      }
+    }
+  }
+}
+
+.tree-view-resizer {
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+}

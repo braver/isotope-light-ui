@@ -1,0 +1,53 @@
+/*
+* tweaks to non-core packages
+*/
+
+// zen
+.zen {
+  border: none;
+  background: @ui-theme-color;
+  .panes atom-pane {
+    background: @ui-theme-color !important; //overrule an inline style
+  }
+  .editor:not(.mini) {
+    margin-top: @modular-scale-l * 1rem;
+    margin-bottom: @modular-scale-l * 1rem;
+  }
+}
+
+
+atom-text-editor,
+atom-text-editor::shadow {
+
+
+  // atom-color-highlight
+  atom-color-highlight {
+    dot-color-marker {
+      margin-top: .4em;
+      max-width: .6em;
+      max-height: .6em;
+      border-radius: @component-border-radius;
+
+      &.selected {
+        box-shadow: 0 0 1px 1px @base-fg;
+
+        .selector {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  //autocomplete-plus
+  .autocomplete-plus.popover-list ol.list-group {
+    overflow: auto;
+  }
+
+
+  // minimap
+  atom-text-editor-minimap::shadow .minimap-visible-area {
+    background-color: @level-0-bg;
+    opacity: .24;
+  }
+}
