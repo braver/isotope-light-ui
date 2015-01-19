@@ -5,3 +5,6 @@
 * Tree-view highlight
 * Readme update
 * Minor tweaks and syncing with upstream
+
+## 0.1.3 - Tree-view root folder
+* Project root folder now sticks to the top
