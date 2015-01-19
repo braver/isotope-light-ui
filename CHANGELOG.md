@@ -8,3 +8,5 @@
 
 ## 0.1.3 - Tree-view root folder
 * Project root folder now sticks to the top
+* Improvements to tooltips
+* Minor corrections
