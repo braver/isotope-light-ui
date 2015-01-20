@@ -37,10 +37,14 @@ module.exports =
         Looks better off when scrollbars always visible (e.g. on Linux)'
       type: 'boolean'
       default: true
-    backgroundColor:
-      description: 'Experimental: Choose a custom background color (#rgb).'
-      type: 'string'
-      default: ''
+    customBackgroundColor:
+      description: 'Choose a custom background color.'
+      type: 'boolean'
+      default: false
+    customBackgroundColorPicker:
+      description: 'Choose your background color.'
+      type: 'color'
+      default: 'white'
     backgroundGradient:
       description: 'Apply a subtle gradient to the background.'
       type: 'boolean'
@@ -66,6 +70,6 @@ module.exports =
 
   activate: (state) ->
     # code in separate file so deferral keeps activation time down
-    atom.workspaceView.ready ->
+    atom.themes.onDidChangeActiveThemes ->
       Config = require './config'
       Config.apply()
