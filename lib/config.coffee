@@ -27,16 +27,16 @@ module.exports =
       body.setAttribute('isotope-ui-fontweight', weight)
 
     applyCompactness = () ->
-      if atom.config.get('isotope-light-ui-light.compactLayout')
+      if atom.config.get('isotope-light-ui.compactLayout')
         body.setAttribute('isotope-ui-compact', 'true')
       else
         body.setAttribute('isotope-ui-compact', 'false')
-
-    applyTreeColor = () ->
-      if atom.config.get('isotope-light-ui.colorTreeSelection')
-        body.setAttribute('isotope-ui-treecolor', 'true')
-      else
-        body.setAttribute('isotope-ui-treecolor', 'false')
+    #
+    # applyTreeColor = () ->
+    #   if atom.config.get('isotope-light-ui.colorTreeSelection')
+    #     body.setAttribute('isotope-ui-treecolor', 'true')
+    #   else
+    #     body.setAttribute('isotope-ui-treecolor', 'false')
 
     applyBackgroundColor = () ->
       color =
@@ -103,7 +103,7 @@ module.exports =
     applyFont(atom.config.get('isotope-light-ui.fontFamily'))
     applyFontWeight(atom.config.get('isotope-light-ui.fontWeight'))
     applyCompactness()
-    applyTreeColor()
+    # applyTreeColor()
     applyBackgroundColor()
     applyBackgroundGradient()
     applyBackgroundImage()
@@ -125,10 +125,10 @@ module.exports =
     # atom.config.onDidChange 'isotope-light-ui.colorTreeSelection', ->
     #   applyTreeColor()
 
-    atom.config.onDidChange 'isotope-ui.customBackgroundColor', ->
+    atom.config.onDidChange 'isotope-light-ui.customBackgroundColor', ->
       applyBackgroundColor()
 
-    atom.config.onDidChange 'isotope-ui.customBackgroundColorPicker', ->
+    atom.config.onDidChange 'isotope-light-ui.customBackgroundColorPicker', ->
       applyBackgroundColor()
 
     atom.config.onDidChange 'isotope-light-ui.backgroundGradient', ->
