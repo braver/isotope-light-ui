@@ -89,7 +89,6 @@ module.exports =
         body.setAttribute('isotope-ui-gutter-style', 'false')
 
     applyTooltipContrast = () ->
-      console.log('tooltip')
       if atom.config.get('isotope-light-ui.lowContrastTooltip')
         body.setAttribute('isotope-ui-tooltip-lowcontrast', 'true')
       else
