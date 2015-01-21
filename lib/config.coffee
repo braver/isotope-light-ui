@@ -88,11 +88,12 @@ module.exports =
       else
         body.setAttribute('isotope-ui-gutter-style', 'false')
 
-    # applyTooltipContrast = () ->
-    #   if atom.config.get('isotope-light-ui.lowContrastTooltip')
-    #     body.className = body.setAttribute('isotope-ui-tooltip-lowcontrast', 'true')
-    #   else
-    #     body.className = body.setAttribute('isotope-ui-tooltip-lowcontrast', 'false')
+    applyTooltipContrast = () ->
+      console.log('tooltip')
+      if atom.config.get('isotope-light-ui.lowContrastTooltip')
+        body.setAttribute('isotope-ui-tooltip-lowcontrast', 'true')
+      else
+        body.setAttribute('isotope-ui-tooltip-lowcontrast', 'false')
 
 
     # run when atom is ready
@@ -106,7 +107,7 @@ module.exports =
     applyBackgroundGradient()
     applyBackgroundImage()
     applyGutterStyle()
-    # applyTooltipContrast()
+    applyTooltipContrast()
 
 
     # run when configs change
@@ -140,6 +141,6 @@ module.exports =
 
     atom.config.onDidChange 'isotope-light-ui.gutterStyle', ->
       applyGutterStyle()
-    # 
-    # atom.config.onDidChange 'isotope-light-ui.lowContrastTooltip', ->
-    #   applyTooltipContrast()
+
+    atom.config.onDidChange 'isotope-light-ui.lowContrastTooltip', ->
+      applyTooltipContrast()
