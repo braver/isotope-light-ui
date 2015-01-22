@@ -4,13 +4,12 @@
 
 // zen
 .zen {
-  padding: 0;
   background: @ui-theme-color;
   atom-pane-container atom-pane {
     background: @ui-theme-color !important; //overrule an inline style
   }
   atom-text-editor:not([mini]),
-  .editor:not(.mini), { // can't resolve deprecation until zen package does so
+  .editor:not(.zen) {
     margin-top: @modular-scale-l * 1rem;
     margin-bottom: @modular-scale-l * 1rem;
   }
@@ -19,7 +18,6 @@
 
 atom-text-editor,
 atom-text-editor::shadow {
-
 
   // atom-color-highlight
   atom-color-highlight {

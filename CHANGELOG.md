@@ -15,3 +15,7 @@
 * Solve deprecations
 * Minor tweaks
 * Rolls back fixed project root folder introduced in 1.1.7 because it causes several layout issues
+* Restores low contrast tooltip option
+
+# 0.1.5 - Zen
+* Fix [zen](https://atom.io/packages/zen) support
