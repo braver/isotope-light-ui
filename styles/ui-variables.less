@@ -48,7 +48,7 @@
 @ui-saturation:    max(6% + @theme-adjust-saturation, 0%); // limit to > 0%
 @ui-brightness:    86%;
 @ui-contrast:      @theme-adjust-contrast * 0.12;
-@ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66% );
+@ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66 );
 
 
 
@@ -163,4 +163,4 @@
 @component-line-height:    @modular-scale-xxl * 1rem;
 @component-border-radius:  2px;
 
-@tab-height:                       @modular-scale-xxxl * 1rem;
+@tab-height: @modular-scale-xxxl * 1rem;

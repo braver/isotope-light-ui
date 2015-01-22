@@ -11,6 +11,7 @@
 * Improvements to tooltips
 * Minor corrections
 
-## 1.2.0 - Atom API update
+## 0.1.4 - Atom API update and fixes
 * Solve deprecations
 * Minor tweaks
+* Rolls back fixed project root folder introduced in 1.1.7 because it causes several layout issues
