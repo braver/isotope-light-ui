@@ -43,7 +43,7 @@ module.exports =
         atom.config.get('isotope-light-ui.customBackgroundColorPicker').toHexString()
       if atom.config.get('isotope-light-ui.backgroundGradient')
         if atom.config.get('isotope-light-ui.customBackgroundColor')
-          atom.config.set('isotope-ui.backgroundImage', 'false')
+          atom.config.set('isotope-light-ui.backgroundImage', 'false')
           color1 = shadeColor(color, 12)
           color2 = shadeColor(color, -12)
           gradient = 'linear-gradient(' + color1 + ' 0%, ' + color2 + ' 100%)'
@@ -55,7 +55,7 @@ module.exports =
       else
         body.style.backgroundImage = ''
         if atom.config.get('isotope-light-ui.customBackgroundColor')
-          atom.config.set('isotope-ui.backgroundImage', 'false')
+          atom.config.set('isotope-light-ui.backgroundImage', 'false')
           body.setAttribute('isotope-ui-bg-color', 'true')
           body.style.backgroundColor = color
         else
@@ -65,7 +65,7 @@ module.exports =
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-light-ui.backgroundGradient')
         body.setAttribute('isotope-ui-bg-gradient', 'true')
-        atom.config.set('isotope-ui.backgroundImage', 'false')
+        atom.config.set('isotope-light-ui.backgroundImage', 'false')
       else
         body.setAttribute('isotope-ui-bg-gradient', 'false')
         applyBackgroundImage()
@@ -73,8 +73,8 @@ module.exports =
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-light-ui.backgroundImage')
-        atom.config.set('isotope-ui.customBackgroundColor', 'false')
-        atom.config.set('isotope-ui.backgroundGradient', 'false')
+        atom.config.set('isotope-light-ui.customBackgroundColor', 'false')
+        atom.config.set('isotope-light-ui.backgroundGradient', 'false')
         body.setAttribute('isotope-ui-bg-image', 'true')
         body.style.backgroundImage =
           'url(' + atom.config.get('isotope-light-ui.backgroundImagePath') + ')'
