@@ -17,5 +17,7 @@
 * Rolls back fixed project root folder introduced in 1.1.7 because it causes several layout issues
 * Restores low contrast tooltip option
 
-# 0.1.5 - Zen
+# 0.1.5 - Editor font
 * Fix [zen](https://atom.io/packages/zen) support
+* Use the editor's font for the UI
+* Minor improvements
