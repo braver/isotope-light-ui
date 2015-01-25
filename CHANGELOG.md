@@ -21,3 +21,5 @@
 * Fix [zen](https://atom.io/packages/zen) support
 * Use the editor's font for the UI
 * Minor improvements
+
+# 0.1.6 - Minor
