@@ -1,6 +1,6 @@
 # Isotope Light UI theme
 
-A light fork of [Isotope-UI](https://atom.io/themes/isotope-ui).
+A light fork of [isotope-light-ui](https://atom.io/themes/isotope-light-ui).
 
 A clean and configurable UI theme that adapts to your taste, offering endless possibilities. One Atom, many Isotopes ;)
 
@@ -61,4 +61,4 @@ This package includes a number of fonts that were designed especially for user i
 - Add config for brightness and contrast
 - Tweak and improve stuff for specific packages
 - Use it every day
-- [Make it better almost every day](https://github.com/braver/isotope-ui/issues/2)
+- [Make it better almost every day](https://github.com/braver/isotope-light-ui/issues/2)

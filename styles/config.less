@@ -1,56 +1,118 @@
-//config variables (defined in isotope-ui.coffee) are passed on in attributes
+//config variables (defined in isotope-light-ui.coffee) are passed on in attributes
 //this stylesheet does the css interpretation
 
 //font family
-[isotope-ui-font='Cantarell'] {
+[isotope-light-ui-font='Cantarell'] {
   &,
   atom-text-editor.mini {
     font-family: 'Cantarell', @font-family;
   }
 }
-[isotope-ui-font='Clear Sans'] {
+[isotope-light-ui-font='Clear Sans'] {
   &,
   atom-text-editor.mini {
     font-family: 'Clear Sans', @font-family;
   }
+  &[isotope-light-ui-fontweight='Extra light / Thin'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Clear Sans Thin', @font-family;
+    }
+  }
+  &[isotope-light-ui-fontweight='Light'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Clear Sans Light', @font-family;
+    }
+  }
 }
-[isotope-ui-font='Fira Sans'] {
+[isotope-light-ui-font='Fira Sans'] {
   &,
   atom-text-editor.mini {
     font-family: 'Fira Sans', @font-family;
   }
+  &[isotope-light-ui-fontweight='Extra light / Thin'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Fira Sans Thin', @font-family;
+    }
+  }
+  &[isotope-light-ui-fontweight='Light'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Fira Sans Light', @font-family;
+    }
+  }
 }
-[isotope-ui-font='Open Sans'] {
+[isotope-light-ui-font='Open Sans'] {
   &,
   atom-text-editor.mini {
     font-family: 'Open Sans', @font-family;
   }
+  &[isotope-light-ui-fontweight='Extra light / Thin'],
+  &[isotope-light-ui-fontweight='Light'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Open Sans Light', @font-family;
+    }
+  }
 }
-[isotope-ui-font='Oxygen'] {
+[isotope-light-ui-font='Oxygen'] {
   &,
   atom-text-editor.mini {
     font-family: 'Oxygen', @font-family;
   }
 }
-[isotope-ui-font='Roboto'] {
+[isotope-light-ui-font='Roboto'] {
   &,
   atom-text-editor.mini {
     font-family: 'Roboto', @font-family;
   }
+  &[isotope-light-ui-fontweight='Extra light / Thin'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Roboto Thin', @font-family;
+    }
+  }
+  &[isotope-light-ui-fontweight='Light'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Roboto Light', @font-family;
+    }
+  }
 }
-[isotope-ui-font='Source Sans Pro'] {
+[isotope-light-ui-font='Source Sans Pro'] {
   &,
   atom-text-editor.mini {
     font-family: 'Source Sans Pro', @font-family;
   }
+  &[isotope-light-ui-fontweight='Extra light / Thin'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Source Sans Pro Thin', @font-family;
+    }
+  }
+  &[isotope-light-ui-fontweight='Light'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Source Sans Pro Light', @font-family;
+    }
+  }
 }
-[isotope-ui-font='Ubuntu']  {
+[isotope-light-ui-font='Ubuntu']  {
   &,
   atom-text-editor.mini {
     font-family: 'Ubuntu', @font-family;
   }
+  &[isotope-light-ui-fontweight='Extra light / Thin'],
+  &[isotope-light-ui-fontweight='Light'] {
+    &,
+    atom-text-editor.mini {
+      font-family: 'Ubuntu Light', @font-family;
+    }
+  }
 }
-[isotope-ui-font='System Default']  {
+[isotope-light-ui-font='System Default']  {
   &,
   atom-text-editor.mini {
     font-family: @font-family;
@@ -58,20 +120,20 @@
 }
 
 //font weight
-[isotope-ui-fontweight='Extra light / Thin'] {
+[isotope-light-ui-fontweight='Extra light / Thin'] {
   font-weight: 200;
 }
-[isotope-ui-fontweight='Light'] {
+[isotope-light-ui-fontweight='Light'] {
   font-weight: 300;
 }
-[isotope-ui-fontweight='Regular'] {
+[isotope-light-ui-fontweight='Regular'] {
   font-weight: 400;
 }
 
 // todo maintain zen
-[isotope-ui-bg-color='true'],
-[isotope-ui-bg-gradient='true'],
-[isotope-ui-bg-image='true'] {
+[isotope-light-ui-bg-color='true'],
+[isotope-light-ui-bg-gradient='true'],
+[isotope-light-ui-bg-image='true'] {
   atom-workspace:not(.zen) {
     padding-left: @modular-scale-xxs * 1rem;
     padding-right: @modular-scale-xxs * 1rem;
@@ -95,7 +157,7 @@
   }
 }
 
-[isotope-ui-bg-gradient='true']{
+[isotope-light-ui-bg-gradient='true']{
   atom-workspace {
     // the grain overlay makes the gradient brighter, so we compensate
     background-image: linear-gradient(
@@ -115,10 +177,10 @@
   }
 }
 
-[isotope-ui-bg-image='true'] {
+[isotope-light-ui-bg-image='true'] {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(atom://isotope-ui/resources/images/hubble.jpg);
+  background-image: url(atom://isotope-light-ui/resources/images/hubble.jpg);
   atom-workspace {
     background: transparent;
     // make text stand out against any background
@@ -175,8 +237,8 @@
   }
 }
 
-[isotope-ui-bg-color='true'],
-[isotope-ui-bg-image='true'] {
+[isotope-light-ui-bg-color='true'],
+[isotope-light-ui-bg-image='true'] {
   atom-workspace {
     background: transparent;
   }
