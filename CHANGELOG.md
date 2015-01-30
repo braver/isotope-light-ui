@@ -19,7 +19,13 @@
 
 # 0.1.5 - Editor font
 * Fix [zen](https://atom.io/packages/zen) support
-* Use the editor's font for the UI
-* Minor improvements
 
-# 0.1.6 - Minor
+# 0.1.6, 0.1.7 - Mini editor
+* Now properly applies fonts to mini editor
+
+# 0.1.8 - Bold
+* Bold font is now thinner for light and thin fonts
+
+# 0.1.9 - Lists
+* Temporarily disabling custom background color because of errors
+* Improve lists: command palette, autocomplete, etc.

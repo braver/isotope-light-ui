@@ -32,19 +32,6 @@ module.exports =
         (useful on small screens).'
       type: 'boolean'
       default: false
-    # colorTreeSelection:
-    #   description: 'Make the selected file stand out in tree-view.
-    #     Looks better off when scrollbars always visible (e.g. on Linux)'
-    #   type: 'boolean'
-    #   default: true
-    customBackgroundColor:
-      description: 'Choose a custom background color.'
-      type: 'boolean'
-      default: false
-    customBackgroundColorPicker:
-      description: 'Choose your background color.'
-      type: 'color'
-      default: 'white'
     backgroundGradient:
       description: 'Apply a subtle gradient to the background.'
       type: 'boolean'
