@@ -32,3 +32,6 @@
 
 # 0.1.10 - Mini editor
 * Improves cursor and selection alignment in mini editor
+
+# 0.1.10 - Focus
+* Tree focussed state indication
