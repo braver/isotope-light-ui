@@ -28,4 +28,7 @@
 
 # 0.1.9 - Lists
 * Temporarily disabling custom background color because of errors
-* Improve lists: command palette, autocomplete, etc.
+* Improves lists: command palette, autocomplete, etc.
+
+# 0.1.10 - Mini editor
+* Improves cursor and selection alignment in mini editor
