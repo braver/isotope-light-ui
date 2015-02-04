@@ -24,7 +24,6 @@ module.exports =
         atom.config.set('isotope-light-ui.backgroundImage', 'false')
       else
         body.setAttribute('isotope-light-ui-bg-gradient', 'false')
-        applyBackgroundImage()
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-light-ui.backgroundImage')
@@ -65,7 +64,6 @@ module.exports =
     applyCompactness()
     applyBackgroundGradient()
     applyBackgroundImage()
-    applyBackgroundColor()
     applyGutterStyle()
     applyTooltipContrast()
     applyEditorFont()
