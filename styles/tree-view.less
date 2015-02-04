@@ -81,6 +81,17 @@
         }
       }
     }
+    &:focus {
+      li {
+        &.selected,
+        &:not(.list-nested-item).selected,
+        &.list-nested-item.selected > .list-item {
+          &:before {
+            opacity: .88;
+          }
+        }
+      }
+    }
   }
 }
 

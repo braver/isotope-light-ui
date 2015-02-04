@@ -16,8 +16,6 @@ Thanks to [@simurai](https://github.com/simurai) for the work on the [one-dark-u
 
 ![image background](https://github.com/braver/isotope-light-ui/raw/master/resources/images/image.png)
 
-[More examples](https://github.com/braver/isotope-light-ui/blob/master/resources/images/examples.md)
-
 ## Features
 
 - Automatically adapts to your favourite syntax theme
