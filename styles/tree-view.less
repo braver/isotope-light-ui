@@ -69,32 +69,6 @@
   }
 }
 
-// optional color tree-view selected item just like tabs
-[isotope-light-ui-treecolor='true'] {
-  .tree-view.list-tree {
-    li {
-      &.selected,
-      &:not(.list-nested-item).selected,
-      &.list-nested-item.selected > .list-item {
-        &:before {
-          background: @ui-theme-color;
-        }
-      }
-    }
-    &:focus {
-      li {
-        &.selected,
-        &:not(.list-nested-item).selected,
-        &.list-nested-item.selected > .list-item {
-          &:before {
-            opacity: .88;
-          }
-        }
-      }
-    }
-  }
-}
-
 .tree-view-resizer {
   .tree-view-resize-handle {
     width: 8px;
