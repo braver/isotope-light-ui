@@ -12,12 +12,6 @@ module.exports =
     applyFontWeight = (weight) ->
       body.setAttribute('isotope-light-ui-fontweight', weight)
 
-    applyCompactness = () ->
-      if atom.config.get('isotope-light-ui.compactLayout')
-        body.setAttribute('isotope-light-ui-compact', 'true')
-      else
-        body.setAttribute('isotope-light-ui-compact', 'false')
-
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-light-ui.backgroundGradient')
         body.setAttribute('isotope-light-ui-bg-gradient', 'true')
@@ -61,7 +55,6 @@ module.exports =
     # run when atom is ready
     applyFont(atom.config.get('isotope-light-ui.fontFamily'))
     applyFontWeight(atom.config.get('isotope-light-ui.fontWeight'))
-    applyCompactness()
     applyBackgroundGradient()
     applyBackgroundImage()
     applyGutterStyle()
@@ -76,9 +69,6 @@ module.exports =
 
     atom.config.onDidChange 'isotope-light-ui.fontWeight', ->
       applyFontWeight(atom.config.get('isotope-light-ui.fontWeight'))
-
-    atom.config.onDidChange 'isotope-light-ui.compactLayout', ->
-      applyCompactness()
 
     atom.config.onDidChange 'isotope-light-ui.backgroundGradient', ->
       applyBackgroundGradient()

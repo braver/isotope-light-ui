@@ -27,11 +27,6 @@ module.exports =
         'Light',
         'Regular'
       ]
-    compactLayout:
-      description: 'Make UI chrome take up less space vertically
-        (useful on small screens).'
-      type: 'boolean'
-      default: false
     backgroundGradient:
       description: 'Apply a subtle gradient to the background.'
       type: 'boolean'
