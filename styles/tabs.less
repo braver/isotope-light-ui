@@ -1,10 +1,11 @@
 @modified-icon-width: @component-icon-size / 2;
-@tab-text-color: @fg-subtle;
 @tab-top-padding: @modular-scale-xxs * 1rem;
 @tab-bottom-border-height: 0;
 @tab-border: 0 solid @level-5-bg;
 @tab-max-width: 160px;
 @tab-min-width: @tab-height * 2;
+
+@tab-text-color: @fg-subtle;
 
 .close-icon-mixin() {
   right: -12px;
@@ -38,7 +39,7 @@
 
 .tab-bar {
   .top-edge();
-  
+
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   overflow-x: auto;
   overflow-y: hidden;
@@ -150,15 +151,15 @@
   flex: 2 0 auto;
   padding-right: @modified-icon-width + 2px;
   background-color: @tab-background-color-active;
-  color: @base-fg;
+  color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
 
   & .close-icon {
-    color: @base-fg;
+    color:contrast(@ui-theme-color, @base-fg, @level-1-bg);
     transform: scale(1);
   }
 
   &:hover .close-icon {
-    color: @base-fg;
+    color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
 
     &:hover {
       color: @ui-accent;
