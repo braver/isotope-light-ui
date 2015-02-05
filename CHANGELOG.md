@@ -30,8 +30,12 @@
 * Temporarily disabling custom background color because of errors
 * Improves lists: command palette, autocomplete, etc.
 
-# 0.1.10 - Mini editor
-* Improves cursor and selection alignment in mini editor
-
-# 0.1.10 - Focus
+# 1.0.0 - More awesome
 * Tree focussed state indication
+* Now more compact by default (drops the config option)
+* Scrollbars look better when always visible
+* Subtle outlines make selections more visible (just like Sublime)
+* Gutter now styled by syntax theme (drops the config option)
+* Cursor better aligned in mini-editor
+* Path info more readable in search results
+* Better multi-pane support
