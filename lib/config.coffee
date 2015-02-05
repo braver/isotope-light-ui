@@ -30,12 +30,6 @@ module.exports =
         body.setAttribute('isotope-light-ui-bg-image', 'false')
         body.style.backgroundImage = ''
 
-    applyGutterStyle = () ->
-      if atom.config.get('isotope-light-ui.gutterStyle')
-        body.setAttribute('isotope-light-ui-gutter-style', 'true')
-      else
-        body.setAttribute('isotope-light-ui-gutter-style', 'false')
-
     applyTooltipContrast = () ->
       if atom.config.get('isotope-light-ui.lowContrastTooltip')
         body.setAttribute('isotope-light-ui-tooltip-lowcontrast', 'true')
@@ -57,7 +51,6 @@ module.exports =
     applyFontWeight(atom.config.get('isotope-light-ui.fontWeight'))
     applyBackgroundGradient()
     applyBackgroundImage()
-    applyGutterStyle()
     applyTooltipContrast()
     applyEditorFont()
 
@@ -78,9 +71,6 @@ module.exports =
 
     atom.config.onDidChange 'isotope-light-ui.backgroundImagePath', ->
       applyBackgroundImage()
-
-    atom.config.onDidChange 'isotope-light-ui.gutterStyle', ->
-      applyGutterStyle()
 
     atom.config.onDidChange 'isotope-light-ui.lowContrastTooltip', ->
       applyTooltipContrast()
