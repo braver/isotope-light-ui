@@ -39,3 +39,4 @@
 * Cursor better aligned in mini-editor
 * Path info more readable in search results
 * Better multi-pane support
+* Other minor improvements
