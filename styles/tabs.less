@@ -75,7 +75,10 @@
     .title {
       position: relative;
       z-index: 1;
-      padding: 0  @modular-scale * @component-padding 0  @component-padding;
+      padding:  0 @modular-scale-xxl * 1rem 0 @modular-scale-xl * 1rem;
+    }
+    &.active .title {
+      padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-xl * 1rem;
     }
 
     .close-icon {
