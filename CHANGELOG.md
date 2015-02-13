@@ -1,3 +1,6 @@
+# 1.1.0
+* Outlined selections introduced in 1.0.0 now in [separate package](https://atom.io/packages/selection-outlines)
+
 # 1.0.0 - More awesome
 * Tree focussed state indication
 * Now more compact by default (drops the config option)
