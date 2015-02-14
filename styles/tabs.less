@@ -8,8 +8,6 @@
 @tab-text-color: @fg-subtle;
 
 .close-icon-mixin() {
-  right: -12px;
-  margin-right: @modular-scale * @component-padding;
   margin-top: -7px;
   text-align: right;
   top: 50%;
@@ -174,20 +172,20 @@ atom-pane.active .tab.active {
     }
   }
 
-  &:not([data-type="TextEditor"]) {
-    background-color: @level-3-bg;
-    color: contrast(@level-3-bg, @base-fg, @level-1-bg);
-    & .close-icon {
-      color:contrast(@level-3-bg, @base-fg, @level-1-bg);
-    }
-    &:hover .close-icon {
-      color: contrast(@level-3-bg, @base-fg, @level-1-bg);
-
-      &:hover {
-        color: @ui-accent;
-      }
-    }
-  }
+  // &:not([data-type="TextEditor"]) {
+  //   background-color: @level-3-bg;
+  //   color: contrast(@level-3-bg, @base-fg, @level-1-bg);
+  //   & .close-icon {
+  //     color:contrast(@level-3-bg, @base-fg, @level-1-bg);
+  //   }
+  //   &:hover .close-icon {
+  //     color: contrast(@level-3-bg, @base-fg, @level-1-bg);
+  //
+  //     &:hover {
+  //       color: @ui-accent;
+  //     }
+  //   }
+  // }
 }
 
 atom-pane .tab-bar .tab .title:before {
