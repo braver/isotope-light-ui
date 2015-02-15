@@ -6,30 +6,27 @@
 @tab-text-color: @fg-subtle;
 
 .close-icon-mixin() {
-  margin-top: -7px;
-  text-align: right;
+  margin-top: -6px;
   top: 50%;
+  right: 1rem;
+  width: 12px;
+  height: 12px;
+  border: none !important; //overrule default modified indicator
   transform: scale(0);
   transition: transform .2s .1s, color .2s .1s;
-  width: 14px;
-  height: 14px;
-  z-index: 3;
-  border: none;
 
   &:before {
-    position: relative;
-    display: block;
-    top: 1px;
-    left: -1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 1;
+    color: inherit;
   }
 
   &:hover {
     color: @ui-accent;
     transition: transform .1s, color .1s;
-  }
-
-  &:active {
-    opacity: .3;
   }
 }
 
@@ -46,7 +43,6 @@
   }
 
   .tab {
-    position: relative;
     top: @tab-top-padding;
     max-width: @tab-max-width;
     min-width: @tab-min-width;
@@ -64,12 +60,11 @@
       color: @base-fg;
       .close-icon {
         transform: scale(1);
+        color: @base-fg;
       }
     }
 
     .title {
-      position: relative;
-      z-index: 1;
       padding:  0 @modular-scale-xxl * 1rem 0 @modular-scale-xl * 1rem;
     }
     &.active .title {
@@ -79,28 +74,23 @@
     .close-icon {
       .close-icon-mixin();
     }
-    &:hover .close-icon {
-      transform: scale(1);
-    }
   }
 
-  .tab.modified {
-    &:not(:hover) .close-icon {
-      .close-icon-mixin();
-      transform: scale(1);
-      &:before {
-        content: "\f052";
-      }
-    }
+  .tab.modified:not(:hover) .close-icon {
+    .close-icon-mixin();
+    transform: scale(1);
 
-    &:hover .close-icon {
-      color: inherit;
-      transform: scale(1);
-      &:before {
-        content: "\f052";
-      }
+    &:before {
+      content: "\f052";
+      display: block;
+      visibility: visible;
     }
-    &:hover .close-icon:hover {
+  }
+  .tab.modified:hover .close-icon {
+    color: @base-fg;
+    transform: scale(1);
+
+    &:hover {
       color: @ui-accent;
     }
   }
@@ -158,16 +148,15 @@ atom-pane.active .tab.active {
   }
 
   & .close-icon {
-    color:contrast(@ui-theme-color, @base-fg, @level-1-bg);
+    color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
     transform: scale(1);
   }
 
   &:hover .close-icon {
     color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
-
-    &:hover {
-      color: @ui-accent;
-    }
+  }
+  &:hover .close-icon:hover {
+    color: @ui-accent;
   }
 
   //storing
