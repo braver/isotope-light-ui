@@ -2,9 +2,10 @@ module.exports =
 
   apply: () ->
 
-    # functions
-
     body = document.querySelector('body')
+
+
+    # functions
 
     applyFont = (font) ->
       body.setAttribute('isotope-light-ui-font', font)

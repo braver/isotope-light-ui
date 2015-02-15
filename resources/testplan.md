@@ -1,5 +1,7 @@
 Test plan:
 
+- styleguide
+
 - git diff
 - git conflicted (-> merge-conflicts)
 
@@ -18,6 +20,8 @@ Test plan:
 - atom-color-highlight
 
 - git control
+
+- multiple panes
 
 Linux:
 
