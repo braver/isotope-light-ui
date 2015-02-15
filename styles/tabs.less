@@ -1,9 +1,7 @@
 @modified-icon-width: @component-icon-size / 2;
 @tab-top-padding: @modular-scale-xxs * 1rem;
-@tab-bottom-border-height: 0;
-@tab-border: 0 solid @level-5-bg;
 @tab-max-width: 160px;
-@tab-min-width: @tab-height * 2;
+@tab-min-width: @tab-height * 4;
 
 @tab-text-color: @fg-subtle;
 
@@ -12,7 +10,7 @@
   text-align: right;
   top: 50%;
   transform: scale(0);
-  transition: transform .2s .1s, border .2s .1s, color .2s .1s;
+  transition: transform .2s .1s, color .2s .1s;
   width: 14px;
   height: 14px;
   z-index: 3;
@@ -27,7 +25,7 @@
 
   &:hover {
     color: @ui-accent;
-    transition: transform .1s, border .1s, color .1s;
+    transition: transform .1s, color .1s;
   }
 
   &:active {
@@ -38,7 +36,7 @@
 .tab-bar {
   .top-edge();
 
-  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  height: @tab-height + @tab-top-padding;
   overflow-x: auto;
   overflow-y: hidden;
   background: @tab-bar-background-color;
@@ -59,7 +57,6 @@
     margin: 0;
     color: @tab-text-color;
     background: transparent;
-    border-right: @tab-border;
     border-top-left-radius: @component-border-radius;
     border-top-right-radius: @component-border-radius;
 
@@ -154,6 +151,7 @@ atom-pane.active .tab.active {
   color: contrast(@ui-theme-color, @base-fg, @level-1-bg);
   padding: 0;
 
+  -webkit-filter: drop-shadow(0 0 1px rgba(0,0,0,.33));
 
   .title {
     padding: 0 @modular-scale-xxl * 1rem 0 @modular-scale-l * 1rem;
@@ -172,6 +170,7 @@ atom-pane.active .tab.active {
     }
   }
 
+  //storing
   // &:not([data-type="TextEditor"]) {
   //   background-color: @level-3-bg;
   //   color: contrast(@level-3-bg, @base-fg, @level-1-bg);
