@@ -1,4 +1,4 @@
-# 1.1.0 - Maintenance improvements
+# 1.2.0 - Maintenance improvements
 Collects a number of almost invisible improvements to make Isotope more sturdy and 'competitive' with core themes, as well as minor visual tweaks.
 * Outlined selections introduced in 1.3.0 now in [separate package](https://atom.io/packages/selection-outlines)
 * Many small improvements to tabs
