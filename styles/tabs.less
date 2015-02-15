@@ -76,14 +76,14 @@
     }
   }
 
+  .tab.modified .close-icon:before {
+    content: "\f052";
+  }
   .tab.modified:not(:hover) .close-icon {
     .close-icon-mixin();
     transform: scale(1);
-
     &:before {
-      content: "\f052";
-      display: block;
-      visibility: visible;
+      display: block; // overrule default style
     }
   }
   .tab.modified:hover .close-icon {
