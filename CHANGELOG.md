@@ -1,5 +1,11 @@
-# 1.1.0
-* Outlined selections introduced in 1.0.0 now in [separate package](https://atom.io/packages/selection-outlines)
+# 1.1.0 - Maintenance improvements
+Collects a number of almost invisible improvements to make Isotope more sturdy and 'competitive' with core themes.
+* Outlined selections introduced in 1.3.0 now in [separate package](https://atom.io/packages/selection-outlines)
+* Many small improvements to tabs
+* Fixes a number of small issues
+* Some cleanup now that core [theme config features are postponed](https://github.com/atom/settings-view/pull/275)
+* Pretty progress bars (thanks to @simurai)
+* Tighter whitespace in settings-view (and others)
 
 # 1.0.0 - More awesome
 * Tree focussed state indication
