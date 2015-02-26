@@ -2,7 +2,7 @@
   "name": "isotope-light-ui",
   "main": "lib/isotope-light-ui",
   "theme": "ui",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "A scalable and configurable light UI theme.",
   "license": "MIT",
   "repository": "https://github.com/braver/isotope-light-ui",
