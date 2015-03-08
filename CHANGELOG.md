@@ -1,3 +1,6 @@
+# 1.4.0 - Whitespace
+* Tweaks to the modular scale and overall spacing and layout improvements
+
 # 1.3.0 - Seamless tabs
 * Editor tabs not use the editor's background, others like settings have a default background.
 
