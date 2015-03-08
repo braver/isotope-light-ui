@@ -1,3 +1,6 @@
+# 1.4.1 - Whitespace
+* Store settings in data-* attributes for html standards compliance
+
 # 1.4.0 - Whitespace
 * Tweaks to the modular scale and overall spacing and layout improvements
 
