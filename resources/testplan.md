@@ -25,4 +25,4 @@ Test plan:
 
 Linux:
 
-- scrollbars tree-view (left/right)
+- scrollbars (tree-view) (left/right)

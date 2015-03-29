@@ -48,6 +48,10 @@ module.exports =
       description: 'Match the font family you set for the editor.'
       type: 'boolean'
       default: false
+    spaciousMode:
+      description: 'Make the layout more spacious.'
+      type: 'boolean'
+      default: false
 
 
   activate: (state) ->
