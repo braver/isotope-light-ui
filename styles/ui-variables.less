@@ -40,21 +40,16 @@
 }
 .ui-hue();
 
-// @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
 .ui-saturation() when (hsvhue(@ui-theme-color) >= 180) {
-  @ui-saturation: min(hsvsaturation(@ui-theme-color), 24%);
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 12%);
 }
 .ui-saturation() when (hsvhue(@ui-theme-color) > 280), (hsvhue(@ui-theme-color) < 180) {
-  @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 3%);
 }
 .ui-saturation();
 
-@ui-brightness:    25%;
+@ui-brightness:    86%;
 @ui-accent:        spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
-
-// @ui-saturation:    3%;
-// @ui-brightness:    86%;
-// @ui-accent:        spin( hsl( @ui-hue, 50% + @ui-saturation, 50%), 66 );
 
 
 // background
@@ -64,7 +59,7 @@
 @level-2-bg:  darken(@base-bg, 0%);
 @level-3-bg:  darken(@base-bg, 6%);
 
-@stroke: darken(@base-bg, 9%);
+@stroke: lighten(@base-fg, 12%);
 
 @bg-info:    hsl(200, 60%, 48%);
 @bg-success: hsl(140, 60%, 48%);
