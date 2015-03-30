@@ -41,7 +41,7 @@
 .ui-hue();
 
 .ui-saturation() when (hsvhue(@ui-theme-color) >= 180) {
-  @ui-saturation: min(hsvsaturation(@ui-theme-color), 12%);
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
 }
 .ui-saturation() when (hsvhue(@ui-theme-color) > 280), (hsvhue(@ui-theme-color) < 180) {
   @ui-saturation: min(hsvsaturation(@ui-theme-color), 3%);
