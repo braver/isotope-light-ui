@@ -2,7 +2,7 @@
   "name": "isotope-light-ui",
   "main": "lib/isotope-light-ui",
   "theme": "ui",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A clean, light and configurable light UI theme.",
   "license": "MIT",
   "repository": "https://github.com/braver/isotope-light-ui",
@@ -10,6 +10,11 @@
     "atom": ">0.50.0"
   },
   "keywords": [
-    "light","configurable","minimal","clean","compact","desaturated"
+    "light",
+    "configurable",
+    "minimal",
+    "clean",
+    "compact",
+    "desaturated"
   ]
 }
