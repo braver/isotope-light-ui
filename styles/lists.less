@@ -3,7 +3,7 @@
 
 
 //a mixin for creating a number of color variations
-.li-variation-mixin (@class, @color, @hover) {
+.li-variation-mixin(@class, @color, @hover) {
   li {
     &.@{class},
     &:not(.list-nested-item).@{class},
@@ -17,7 +17,7 @@
 }
 
 //the main mixin
-.li-mixin (@color, @height:@list-item-height) {
+.li-mixin(@color, @height:@list-item-height) {
   li {
     padding-left: @space;
     overflow: hidden; //prevent a stacking issue with keybindings
@@ -52,14 +52,14 @@
     }
   }
 
-  .li-variation-mixin ( status-modified, @fg-modified, lighten(@fg-modified, 12%) );
-  .li-variation-mixin ( status-added,    @fg-added,    lighten(@fg-added, 12%) );
-  .li-variation-mixin ( status-ignored,  @fg-ignored,  lighten(@fg-ignored, 12%) );
-  .li-variation-mixin ( text-subtle,     @fg-subtle,   lighten(@fg-subtle, 12%) );
-  .li-variation-mixin ( text-info,       @fg-info,     lighten(@fg-info, 12%) );
-  .li-variation-mixin ( text-success,    @fg-success,  lighten(@fg-success, 12%) );
-  .li-variation-mixin ( text-warning,    @fg-warning,  lighten(@fg-warning, 12%) );
-  .li-variation-mixin ( text-error,      @fg-error,    lighten(@fg-error, 12%) );
+  .li-variation-mixin( status-modified, @fg-modified, lighten(@fg-modified, 12%) );
+  .li-variation-mixin( status-added,    @fg-added,    lighten(@fg-added, 12%) );
+  .li-variation-mixin( status-ignored,  @fg-ignored,  lighten(@fg-ignored, 12%) );
+  .li-variation-mixin( text-subtle,     @fg-subtle,   lighten(@fg-subtle, 12%) );
+  .li-variation-mixin( text-info,       @fg-info,     lighten(@fg-info, 12%) );
+  .li-variation-mixin( text-success,    @fg-success,  lighten(@fg-success, 12%) );
+  .li-variation-mixin( text-warning,    @fg-warning,  lighten(@fg-warning, 12%) );
+  .li-variation-mixin( text-error,      @fg-error,    lighten(@fg-error, 12%) );
 }
 
 .list-group {
