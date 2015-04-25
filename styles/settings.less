@@ -1,10 +1,15 @@
 .settings-view {
+  .settings-panel label,
+  .breadcrumb,
   .setting-title,
   .package-readme {
     font-size: 1rem;
   }
+  > * {
+    background: @level-1-bg;
+  }
   .config-menu {
-    background: @level-3-bg;
+    background: @level-1-bg;
 
     .nav > li {
       a {
@@ -19,7 +24,7 @@
       &.active {
         a {
           color: @fg-selected;
-          background-color: @level-3-bg;
+          background-color: @level-2-bg;
         }
       }
     }
@@ -36,14 +41,6 @@
     border-top: none;
   }
 
-  .section:first-of-type {
-    border-top: none;
-  }
-
-  .settings-panel label,
-  .breadcrumb {
-    font-size: 1rem;
-  }
   section .section-heading,
   .section .section-heading {
     font-size: @scale-a-xl * 1rem;
