@@ -7,18 +7,18 @@
   @bg-level1: @bg;
   @bg-level2: lighten(@bg, 12%);
 
-  color: @fg;
+  color: contrast(@bg, @fg, #fff);
   background-color: transparent;
   background-image: linear-gradient(
-    mix(#00D4FF, @bg-level1 , 3%) 0%,
-    darken(@bg-level1, 6%) 50%,
-    darken(@bg-level1, 12%) 100%);
+    mix(#fff, @bg-level1 , 6%) 0%,
+    darken(@bg-level1, 0%) 50%,
+    darken(@bg-level1, 6%) 100%);
   background-size: auto 400%;
   background-position: 0 50%;
 
   border-radius: @component-border-radius;
 
-  border: 1px solid @outline;
+  border: 1px solid @stroke;
   transition: all .2s .1s;
   height: auto;
   min-height: @component-line-height;
@@ -26,48 +26,50 @@
 
   &.btn-xs {
     padding: 0 @space;
-    // height: @scale-b-l * 1rem;
     line-height: @scale-b-l * 1rem;
   }
   &.btn-sm {
     padding: 0 @space;
-    // height: @scale-b-xl * 1rem;
     line-height: @scale-b-xl * 1rem;
   }
   &.btn-lg {
     padding: 0 @space;
-    // height: pow(@scale-b, 4) * 1rem;
     line-height: pow(@scale-b, 4) * 1rem;
   }
 
   &:focus,
   &:hover {
-    color: @fg;
+    color: contrast(@bg, @fg, #fff);
     background-position: 0 0;
     transition: all .1s;
+    border: 1px solid darken(@bg, 24%);
   }
   &:active {
-    color: @fg;
+    color: contrast(@bg, @fg, #fff);
     background-image: linear-gradient(
-      mix(#00D4FF, @bg-level1 , 3%) 0%,
-      darken(@bg-level1, 6%) 50%,
-      darken(@bg-level1, 12%) 100%);
+      mix(#fff, @bg-level1 , 6%) 0%,
+      darken(@bg-level1, 0%) 50%,
+      darken(@bg-level1, 16) 100%);
     background-position: 0 100%;
+    border: 1px solid darken(@bg, 24%);
   }
   &.selected {
     color: @fg-selected;
     background-image: linear-gradient(
-      mix(#00D4FF, @bg-level2 , 3%) 0%,
-      darken(@bg-level2, 6%) 50%,
-      darken(@bg-level2 , 12%) 100%);
+      mix(#fff, @bg-level2 , 6%) 0%,
+      darken(@bg-level2, 0%) 50%,
+      darken(@bg-level2 , 6%) 100%);
     background-size: auto 200%;
     background-position: 0 100%;
+    border: 1px solid darken(@bg, 24%);
     &:hover {
       color: @fg-selected;
       background-position: 0 50%;
+      border: 1px solid darken(@bg, 24%);
     }
     &:active {
       background-position: 0 0;
+      border: 1px solid darken(@bg, 24%);
     }
   }
 }
@@ -96,18 +98,25 @@
 
 .btn-group {
   > .btn:first-child {
-    border-left: 1px solid @outline;
+    border-left: 1px solid @stroke;
   }
   > .btn:last-child {
-    border-right: 1px solid @outline;
+    border-right: 1px solid @stroke;
   }
 }
-.find-and-replace {
+.find-and-replace,
+.project-find {
+  .btn-group {
+    display: flex;
+    border-left: 1px solid @stroke;
+    border-right: 1px solid @stroke;
+    border-radius: @component-border-radius;
+  }
   .btn-group > .btn {
+    flex: 1;
     box-sizing: border-box;
-    max-height: @component-line-height;
-    border: none;
-    box-shadow: 0 0 0 1px @stroke;
+    line-height: 1rem;
+    border: 1px solid @stroke;
     &:first-child {
       border-left: none;
     }
@@ -117,8 +126,9 @@
   }
 }
 
-.settings-view .package-card .meta-controls .status-indicator {
-  box-sizing: content-box;
+.settings-view search-container .btn-group,
+.settings-view .package-card .meta-controls .btn-group {
+  display: flex;
 }
 
 //no real sense in the default courier for these
