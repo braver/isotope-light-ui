@@ -2,8 +2,8 @@
 
 
 //provide defaults, users can set configs that are handled in config.less
-@font-family: 'Helvetica Neue', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
-@font-size: 12px;
+@font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+@font-size: 11px;
 @font-weight: 200;
 
 
@@ -27,7 +27,6 @@
 @scale-b-xxl:  round(pow(@scale-b, 3), 1);
 
 @space: round(@scale-b-s, 1) * 1rem;
-@text-height: @scale-b-xxl * 1rem;
 
 // leading color
 @ui-theme-color: @syntax-background-color;
@@ -37,20 +36,22 @@
   @ui-hue: 180;
 }
 .ui-hue() when (hsvhue(@ui-theme-color) > 0), (hsvsaturation(@ui-theme-color) > 0%) {
-  @ui-hue: hsvhue(@ui-theme-color) - 20;
+  @ui-hue: hsvhue(@ui-theme-color);
 }
 .ui-hue();
 
-.ui-saturation() when (hsvhue(@ui-theme-color) >= 180) {
-  @ui-saturation: min(hsvsaturation(@ui-theme-color), 8%);
-}
-.ui-saturation() when (hsvhue(@ui-theme-color) > 280), (hsvhue(@ui-theme-color) < 180) {
-  @ui-saturation: min(hsvsaturation(@ui-theme-color), 3%);
-}
-.ui-saturation();
+@ui-saturation: 2%;
 
-@ui-brightness:    86%;
-@ui-accent:        spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
+.ui-brightness() when (hsvvalue(@ui-theme-color) >= 50%) {
+  @ui-brightness: hsvvalue(@ui-theme-color) - 6%;
+}
+.ui-brightness() when (hsvvalue(@ui-theme-color) < 50%) {
+  @ui-brightness: hsvvalue(@ui-theme-color) + 80%;
+}
+.ui-brightness();
+
+
+@ui-accent: spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
 
 
 // background
@@ -60,16 +61,7 @@
 @level-2-bg:  darken(@base-bg, 0%);
 @level-3-bg:  darken(@base-bg, 6%);
 
-@stroke: lighten(@base-fg, 24%);
-@shadow: darken(@base-fg, 24%);
-
-.outline() when (hsvvalue(@ui-theme-color) >= 50%) {
-  @outline: lighten(@base-fg, 42%);
-}
-.outline() when (hsvvalue(@ui-theme-color) < 50%) {
-  @outline: darken(@base-fg, 12%);
-}
-.outline();
+@stroke: lighten(@base-fg, 36%);
 
 @bg-info:    hsl(200, 60%, 48%);
 @bg-success: hsl(140, 60%, 48%);
@@ -78,7 +70,7 @@
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, max(30%, @ui-brightness / 4) );
+@base-fg: hsl(@ui-hue, @ui-saturation, 18% );
 
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
@@ -168,8 +160,7 @@
 @component-padding:        @scale-a-m * 1rem;
 @component-icon-padding:   @space;
 @component-icon-size:      16/12 * 1rem;
-@component-line-height:    @text-height;
+@component-line-height:    round(@scale-b-xxl) * 1rem;
 @component-border-radius:  2px;
 
-// @tab-height: @text-height + @space/2;
-@tab-height: @scale-b-xl * 1rem + @scale-b-s * 1rem;
+@tab-height: @component-line-height + (@scale-b-s * 1rem);

@@ -52,6 +52,10 @@ module.exports =
       description: 'Make the layout more spacious.'
       type: 'boolean'
       default: false
+    minimalMode:
+      description: 'Make the layout more minimal.'
+      type: 'boolean'
+      default: false
 
 
   activate: (state) ->

@@ -5,10 +5,10 @@
 .tooltip {
   white-space: nowrap;
   font-size: @scale-a-m * 1rem;
-  -webkit-filter: drop-shadow(0 0 3px fadeOut(@shadow, 50%));
+  -webkit-filter: drop-shadow(0 0 3px fadeOut(@stroke, 50%));
 
   .tooltip-inner {
-    line-height: @text-height;
+    line-height: @component-line-height;
     padding: 0 @space;
     border-radius: @component-border-radius;
     background-color: @tooltip-background-color;
@@ -53,7 +53,7 @@
   }
 }
 
-[data-isotope-ui-tooltip-lowcontrast='true'] {
+[data-isotope-light-ui-tooltip-lowcontrast='true'] {
   .tooltip {
     .tooltip-inner {
       background: @level-1-bg;

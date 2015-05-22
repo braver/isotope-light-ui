@@ -1,6 +1,6 @@
 # Isotope Light UI theme
 
-This is a light fork of [isotope-ui](https://atom.io/themes/isotope-ui).
+This is a light fork of [isotope-light-ui](https://atom.io/themes/isotope-light-ui).
 
 A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope adapts to match any syntax theme and you can change its appearance quite extensively. It provides an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
 
@@ -13,7 +13,6 @@ A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope
 ## Features
 
 - Automatically adapts to your favourite syntax theme
-- Looks awesome in [Zen](https://atom.io/packages/Zen)
 - Configurable!
 
 
@@ -24,6 +23,7 @@ A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope
 - Or even use any image as background (from your computer or [the internets](http://hubblesite.org)).
 - Choose low contrast tooltips (or fancy colorful ones).
 - Choose a more spacious layout for your 27"
+- Or go super minimal
 - Change font-sizes for the entire UI (everything will scale to fit) by putting this in your stylesheet:
 
 ```
