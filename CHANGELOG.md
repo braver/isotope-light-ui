@@ -1,4 +1,6 @@
-# 2.2.0 - Even better everything
+# 2.2.0 - Minimal mode!
+* Added a truly minimal layout mode!
+* Removed some of the transitions to make it feel more snappy
 * Line-heights for buttons, mini-editor and tabs improved
 * Improved rendering for many custom font-sizes
 * Transparent bottom panels for gradient and image backgrounds
