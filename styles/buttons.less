@@ -18,7 +18,7 @@
 
   border-radius: @component-border-radius;
   box-sizing: border-box;
-  border: 1px solid darken(@bg, 12%);
+  border: 1px solid @stroke;
 
   transition: all .2s .1s;
   height: ~"calc("@component-line-height ~"+ 2px)";
@@ -42,7 +42,6 @@
     color: contrast(@bg, @fg, #fff);
     background-position: 0 0;
     transition: all .1s;
-    border: 1px solid darken(@bg, 24%);
   }
   &:active {
     color: contrast(@bg, @fg, #fff);
