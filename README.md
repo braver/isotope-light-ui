@@ -1,6 +1,6 @@
 # Isotope Light UI theme
 
-This is a light fork of [isotope-light-ui](https://atom.io/themes/isotope-light-ui).
+This is a light fork of [isotope-ui](https://atom.io/themes/isotope-ui).
 
 A UI theme that offers endless possibilities: one Atom, many Isotopes ;) Isotope adapts to match any syntax theme and you can change its appearance quite extensively. It provides an easy-on-the-eyes backdrop for your code, with well balanced typography, whitespace and contrast.
 
