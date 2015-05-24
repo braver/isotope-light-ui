@@ -4,6 +4,7 @@
 * Line-heights for buttons, mini-editor and tabs improved
 * Improved rendering for many custom font-sizes
 * Transparent bottom panels for gradient and image backgrounds
+* Default font-size now 11px (you can change this!)
 
 # 2.1.0 - Even better everything
 * Better search panel background
