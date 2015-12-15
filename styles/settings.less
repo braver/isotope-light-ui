@@ -1,33 +1,17 @@
 .settings-view {
-  
   .settings-panel label,
   .breadcrumb,
   .setting-title,
   .package-readme {
-    font-size: 1rem;
+    font-size: inherit;
   }
   .section-container {
     max-width: 60rem;
   }
   .config-menu {
-    background: @level-1-bg;
-
-    .nav > li {
-      a {
-        color: @base-fg;
-      }
-      a,
-      a:hover {
-        background-color: transparent;
-        font-size: 1rem;
-      }
-
-      &.active {
-        a {
-          color: @fg-selected;
-          background-color: @level-2-bg;
-        }
-      }
+    background: @level-3-bg;
+    .nav > li > a:hover {
+      background: transparent;
     }
   }
   .form-control {
@@ -36,6 +20,9 @@
     line-height: @component-line-height * @scale-a;
     border-radius: @component-border-radius;
     max-width: 40rem;
+  }
+  atom-text-editor.mini {
+    background: @level-2-bg;
   }
 
   .link {
@@ -59,27 +46,16 @@
       width: 24px;
     }
   }
-  .sub-section-heading {
-    font-size: @scale-a-l * 1rem;
-  }
-  .section-heading-count {
-    font-size: @scale-a-s * 1em;
-  }
-  .packages .themes-label {
-    font-size: @scale-a-l * 1rem;
-  }
-  .packages .search-container {
-    margin-bottom: 1rem;
-  }
-  .setting-description {
-    font-size: @scale-a-s * 1rem;
-  }
+
 
   .package-card {
-    font-size: 1rem;
+    font-size: inherit;
+    background: @level-2-bg;
+    &:hover {
+      background: @level-1-bg;
+    }
 
     .card-name {
-      font-size: @scale-a-l * 1rem;
       a {
         color: @fg-highlight;
       }
@@ -91,10 +67,6 @@
     .meta-user .avatar {
       height: @component-line-height;
       width: @component-line-height;
-    }
-    .meta-controls .install-button.is-installing {
-      background-image: linear-gradient(to right, @level-2-bg 50%, @level-1-bg 50%);
-      border-color: @level-2-bg;
     }
     .meta-controls .status-indicator{
       max-height: @component-line-height;

@@ -7,22 +7,21 @@
   @bg-level1: @bg;
   @bg-level2: lighten(@bg, 12%);
 
-  color: contrast(@bg, @fg, #fff);
+  color: @fg;
   background-color: transparent;
   background-image: linear-gradient(
-    mix(#fff, @bg-level1 , 6%) 0%,
-    darken(@bg-level1, 0%) 50%,
-    darken(@bg-level1, 6%) 100%);
+    mix(#00D4FF, @bg-level1 , 3%) 0%,
+    darken(@bg-level1, 6%) 50%,
+    darken(@bg-level1, 12%) 100%);
   background-size: auto 400%;
   background-position: 0 50%;
 
   border-radius: @component-border-radius;
   box-sizing: border-box;
   border: 1px solid @stroke;
-
   transition: all .2s .1s;
-  height: ~"calc("@component-line-height ~"+ 2px)";
-  line-height: ~"calc("@component-line-height ~"- 2px)";
+  height: ~"calc("@component-line-height ~"+ 4px)";
+  line-height: ~"calc("@component-line-height ~"- 4px)";
 
   &.btn-xs {
     padding: 0 @space;
@@ -38,38 +37,44 @@
   }
 
   &:focus,
-  &:hover {
-    color: contrast(@bg, @fg, #fff);
+  &:hover,
+  &:active {
+    color: @fg;
+    border: 1px solid @stroke;
+  }
+  &:not([disabled]):focus,
+  &:not([disabled]):hover {
     background-position: 0 0;
     transition: all .1s;
   }
-  &:active {
-    color: contrast(@bg, @fg, #fff);
+  &:not([disabled]):active {
+    color: @fg;
     background-image: linear-gradient(
-      mix(#fff, @bg-level1 , 6%) 0%,
-      darken(@bg-level1, 0%) 50%,
-      darken(@bg-level1, 16) 100%);
+      mix(#00D4FF, @bg-level1 , 3%) 0%,
+      darken(@bg-level1, 6%) 50%,
+      darken(@bg-level1, 12%) 100%);
     background-position: 0 100%;
-    border: 1px solid darken(@bg, 24%);
   }
   &.selected {
     color: @fg-selected;
     background-image: linear-gradient(
-      mix(#fff, @bg-level2 , 6%) 0%,
-      darken(@bg-level2, 0%) 50%,
-      darken(@bg-level2 , 6%) 100%);
+      mix(#00D4FF, @bg-level2 , 3%) 0%,
+      darken(@bg-level2, 6%) 50%,
+      darken(@bg-level2 , 12%) 100%);
     background-size: auto 200%;
     background-position: 0 100%;
-    border: 1px solid darken(@bg, 24%);
     &:hover {
       color: @fg-selected;
+    }
+    &:not([disabled]):hover {
       background-position: 0 50%;
-      border: 1px solid darken(@bg, 24%);
     }
-    &:active {
+    &:not([disabled]):active {
       background-position: 0 0;
-      border: 1px solid darken(@bg, 24%);
     }
+  }
+  &[disabled] {
+    background: transparent;
   }
 }
 
@@ -124,9 +129,8 @@
   }
 }
 
-.settings-view search-container .btn-group,
-.settings-view .package-card .meta-controls .btn-group {
-  display: flex;
+.settings-view .package-card .meta-controls .status-indicator {
+  box-sizing: content-box;
 }
 
 //no real sense in the default courier for these

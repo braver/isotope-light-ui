@@ -2,9 +2,9 @@
 
 
 //provide defaults, users can set configs that are handled in config.less
-@font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+@font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
 @font-size: 11px;
-@font-weight: 200;
+@font-weight: 400;
 
 
 // a modular scale maintains relations across all sizes and spaces
@@ -40,7 +40,13 @@
 }
 .ui-hue();
 
-@ui-saturation: 1%;
+.ui-saturation() when (hsvhue(@ui-theme-color) >= 180) {
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 24%);
+}
+.ui-saturation() when (hsvhue(@ui-theme-color) > 280), (hsvhue(@ui-theme-color) < 180) {
+  @ui-saturation: min(hsvsaturation(@ui-theme-color), 6%);
+}
+.ui-saturation();
 
 .ui-brightness() when (hsvvalue(@ui-theme-color) >= 50%) {
   @ui-brightness: hsvvalue(@ui-theme-color) - 6%;
@@ -50,8 +56,8 @@
 }
 .ui-brightness();
 
+@ui-accent:        spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
 
-@ui-accent: spin( hsl( @ui-hue, 60% + @ui-saturation, 60%), 66 );
 
 
 // background
@@ -62,15 +68,16 @@
 @level-3-bg:  darken(@base-bg, 6%);
 
 @stroke: lighten(@base-fg, 36%);
+@item-views-stroke: lighten(@base-bg, 37%);
 
-@bg-info:    hsl(200, 60%, 48%);
-@bg-success: hsl(140, 60%, 48%);
-@bg-warning: hsl(40,  60%, 48%);
-@bg-error:   hsl(350, 60%, 48%);
+@bg-info:    hsl(200, 60%, 50%);
+@bg-success: hsl(140, 60%, 50%);
+@bg-warning: hsl(40,  60%, 50%);
+@bg-error:   hsl(350, 60%, 50%);
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, 18% );
+@base-fg: hsl(@ui-hue, @ui-saturation, min(24%, (@ui-brightness) / 2.8) );
 
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
@@ -78,18 +85,17 @@
 @fg-highlight: hsl(@ui-hue, @ui-saturation*8, 12%);
 @fg-selected: hsl(@ui-hue, @ui-saturation*8, 2%);
 
-@fg-info:    hsl(200, 60%, 43%);
-@fg-success: hsl(140, 60%, 43%);
-@fg-warning: hsl(40,  60%, 43%);
-@fg-error:   hsl(350, 60%, 43%);
+@fg-info:    hsl(200, 60%, 60%);
+@fg-success: hsl(140, 60%, 60%);
+@fg-warning: hsl(40,  60%, 60%);
+@fg-error:   hsl(350, 60%, 60%);
 
 @fg-added:    @fg-success;
 @fg-renamed:  @fg-info;
 @fg-modified: @fg-warning;
 @fg-removed:  @fg-error;
 
-@fg-active: contrast(@ui-theme-color, @base-fg, @base-bg);
-
+@shadow: 0 0 2rem rgba(0,0,0,.3);
 
 
 // other required vars
@@ -104,6 +110,7 @@
 @text-color-success: @fg-success;
 @text-color-warning: @fg-warning;
 @text-color-error:   @fg-error;
+@text-color-modified: @fg-warning;
 
 @background-color-info: @bg-info;
 @background-color-success: @bg-success;
@@ -161,6 +168,6 @@
 @component-icon-padding:   @space;
 @component-icon-size:      16/12 * 1rem;
 @component-line-height:    round(@scale-b-xxl) * 1rem;
-@component-border-radius:  2px;
+@component-border-radius:  4px;
 
 @tab-height: @component-line-height + (@scale-b-s * 1rem);

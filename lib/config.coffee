@@ -13,15 +13,27 @@ module.exports =
     applyFontWeight = (weight) ->
       body.setAttribute('data-isotope-light-ui-fontweight', weight)
 
+    applyBackgroundColor = () ->
+      if atom.config.get('isotope-light-ui.customBackgroundColor')
+        atom.config.set('isotope-light-ui.backgroundImage', 'false')
+        atom.config.set('isotope-light-ui.backgroundGradient', 'false')
+        body.setAttribute('data-isotope-light-ui-bg-color', 'true')
+        body.style.backgroundColor = atom.config.get('isotope-light-ui.customBackgroundColorPicker').toHexString()
+      else
+        body.setAttribute('data-isotope-light-ui-bg-color', 'false')
+        body.style.backgroundColor = ''
+
     applyBackgroundGradient = () ->
       if atom.config.get('isotope-light-ui.backgroundGradient')
-        body.setAttribute('data-isotope-light-ui-bg-gradient', 'true')
         atom.config.set('isotope-light-ui.backgroundImage', 'false')
+        atom.config.set('isotope-light-ui.customBackgroundColor', 'false')
+        body.setAttribute('data-isotope-light-ui-bg-gradient', 'true')
       else
         body.setAttribute('data-isotope-light-ui-bg-gradient', 'false')
 
     applyBackgroundImage = () ->
       if atom.config.get('isotope-light-ui.backgroundImage')
+        atom.config.set('isotope-light-ui.customBackgroundColor', 'false')
         atom.config.set('isotope-light-ui.customBackgroundColor', 'false')
         atom.config.set('isotope-light-ui.backgroundGradient', 'false')
         body.setAttribute('data-isotope-light-ui-bg-image', 'true')
@@ -46,29 +58,22 @@ module.exports =
       else
         body.style.fontFamily = ''
 
-    applySpaciousMode = () ->
-      if atom.config.get('isotope-light-ui.spaciousMode')
-        atom.config.set('isotope-light-ui.minimalMode', 'false')
-        body.setAttribute('data-isotope-light-ui-spacious', 'true')
-      else
-        body.setAttribute('data-isotope-light-ui-spacious', 'false')
-
     applyMinimalMode = () ->
       if atom.config.get('isotope-light-ui.minimalMode')
-        atom.config.set('isotope-light-ui.spaciousMode', 'false')
         body.setAttribute('data-isotope-light-ui-minimal', 'true')
       else
         body.setAttribute('data-isotope-light-ui-minimal', 'false')
 
 
     # run when atom is ready
+
     applyFont(atom.config.get('isotope-light-ui.fontFamily'))
     applyFontWeight(atom.config.get('isotope-light-ui.fontWeight'))
     applyBackgroundGradient()
     applyBackgroundImage()
+    applyBackgroundColor()
     applyTooltipContrast()
     applyEditorFont()
-    applySpaciousMode()
     applyMinimalMode()
 
 
@@ -79,6 +84,12 @@ module.exports =
 
     atom.config.onDidChange 'isotope-light-ui.fontWeight', ->
       applyFontWeight(atom.config.get('isotope-light-ui.fontWeight'))
+
+    atom.config.onDidChange 'isotope-light-ui.customBackgroundColor', ->
+      applyBackgroundColor()
+
+    atom.config.onDidChange 'isotope-light-ui.customBackgroundColorPicker', ->
+      applyBackgroundColor()
 
     atom.config.onDidChange 'isotope-light-ui.backgroundGradient', ->
       applyBackgroundGradient()
@@ -94,9 +105,6 @@ module.exports =
 
     atom.config.onDidChange 'isotope-light-ui.matchEditorFont', ->
       applyEditorFont()
-
-    atom.config.onDidChange 'isotope-light-ui.spaciousMode', ->
-      applySpaciousMode()
 
     atom.config.onDidChange 'isotope-light-ui.minimalMode', ->
       applyMinimalMode()

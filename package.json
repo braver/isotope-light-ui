@@ -3,11 +3,11 @@
   "main": "lib/isotope-light-ui",
   "theme": "ui",
   "version": "2.1.2",
-  "description": "A clean, light and configurable light UI theme.",
+  "description": "A clean and configurable light UI theme.",
   "license": "MIT",
   "repository": "https://github.com/braver/isotope-light-ui",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=1.1.0 <2.0.0"
   },
   "keywords": [
     "light",

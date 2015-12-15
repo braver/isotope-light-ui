@@ -1,3 +1,7 @@
+# 2.3.0 - Syncing with isotope-ui
+* Pulled in many recently made changes to isotope-ui in to isotope-light-ui
+* Added two scripts to help keep things in sync going forward!
+
 # 2.2.0 - Minimal mode!
 * Added a truly minimal layout mode!
 * Removed some of the transitions to make it feel more snappy

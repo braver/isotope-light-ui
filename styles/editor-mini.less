@@ -1,14 +1,14 @@
 atom-text-editor.mini {
   border-radius: @component-border-radius;
-  box-shadow: 0 0 0 1px @input-border-color;
+  box-shadow: 0 0 0 1px @stroke;
   font-family: @font-family;
   font-size: @scale-a-m * 1rem;
   background: @input-background-color;
   color: @base-fg;
   padding-left: @space;
-  line-height: @component-line-height;
-  max-height: @component-line-height;
-  height: @component-line-height;
+  line-height: ~"calc("@component-line-height ~"+ 2px)";
+  max-height: ~"calc("@component-line-height ~"+ 2px)";
+  height: ~"calc("@component-line-height ~"+ 2px)";
 
   &,
   &::shadow {
@@ -22,7 +22,7 @@ atom-text-editor.mini {
       background: @level-2-bg;
     }
     .cursor {
-      border-color: @stroke;
+      border-color: @fg-subtle;
     }
     .markup.underline {
       color: @base-fg;
@@ -32,6 +32,7 @@ atom-text-editor.mini {
   &.is-focused,
   &.is-focused::shadow {
     background: @input-background-color;
+    box-shadow: 0 0 0 1px @ui-accent;
     color: @fg-highlight;
 
     .selection .region {

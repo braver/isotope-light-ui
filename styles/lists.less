@@ -29,7 +29,8 @@
       line-height: @height;
       color: @color;
       &:before {
-        height: @scale-a-xxxl * 1rem;
+        height: @height;
+        line-height: @height;
       }
       &:hover {
         color: lighten(@color, 12%);
@@ -45,7 +46,7 @@
       &:before {
         line-height: @height;
         min-height: @height;
-        background-color: @level-3-bg;
+        background-color: @level-2-bg;
       }
     }
   }
@@ -76,9 +77,11 @@
 .list-tree {
 
   .icon {
-    &:before{
-      height: 100%;
-      line-height: 100%;
+    line-height: inherit;
+    position: relative;
+    &::before {
+      height: 16px;
+      line-height: 16px;
     }
   }
   button { //e.g. open file list package
@@ -130,7 +133,7 @@
     // pad in front of the text where the icon would be We'll pad the non-
     // active items with a 'fake' icon so other classes can pad the item
     // without worrying about the icon padding.
-    li:before,
+    li::before,
     li.selected:before {
       content: '';
       background-color: transparent;
@@ -146,7 +149,7 @@
     }
     li.active {
       .octicon(check, @active-icon-size);
-      &:before { //icon
+      &::before { //icon
         margin-right: @component-icon-padding;
         color: @fg-success;
         height: @list-item-height;
@@ -158,7 +161,7 @@
 
 .select-list.popover-list {
   background-color: @overlay-background-color;
-  box-shadow: 0 0 1rem rgba(0,0,0,.5);
+  box-shadow: @shadow;
   padding: @space;
   border-radius: @component-border-radius;
 
@@ -180,5 +183,5 @@ li.ui-sortable-helper {
   list-style: none;
   padding: 0 @component-padding;
   background: @level-2-bg;
-  box-shadow: 0 0 1px rgba(0,0,0,.5);
+  box-shadow: @shadow;
 }

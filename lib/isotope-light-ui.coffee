@@ -5,7 +5,7 @@ module.exports =
       description: 'Use one of the fonts available in this package.
         View the README for descriptions of each.'
       type: 'string'
-      default: 'Open Sans'
+      default: 'System Default'
       enum: [
         'Cantarell',
         'Clear Sans',
@@ -21,12 +21,20 @@ module.exports =
       description: 'Not all fonts come in all weights: Canterell and Oxygen
         only have regular, Ubuntu and Open Sans don\'t have thin.'
       type: 'string'
-      default: 'Light'
+      default: 'Regular'
       enum: [
         'Extra light / Thin',
         'Light',
         'Regular'
       ]
+    customBackgroundColor:
+      description: 'Choose a custom background color.'
+      type: 'boolean'
+      default: false
+    customBackgroundColorPicker:
+      description: 'Choose your background color.'
+      type: 'color'
+      default: 'white'
     backgroundGradient:
       description: 'Apply a subtle gradient to the background.'
       type: 'boolean'
@@ -46,10 +54,6 @@ module.exports =
       default: false
     matchEditorFont:
       description: 'Match the font family you set for the editor.'
-      type: 'boolean'
-      default: false
-    spaciousMode:
-      description: 'Make the layout more spacious.'
       type: 'boolean'
       default: false
     minimalMode:

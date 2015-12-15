@@ -130,7 +130,6 @@
   font-weight: 400;
 }
 
-// todo maintain zen
 [data-isotope-light-ui-bg-color='true'],
 [data-isotope-light-ui-bg-gradient='true'],
 [data-isotope-light-ui-bg-image='true'] {
@@ -185,11 +184,8 @@
     .status-bar,
     .tree-view.list-tree, // sadly loses status-indication
     .tab-bar .tab:not(.active) {
-      & *,
-      li.selected,
-      li:not(.list-nested-item).selected,
-      li.list-nested-item.selected > .list-item {
-        color: #fafafa !important;
+      & * {
+        color: #fafafa;
         text-shadow: 0 0 3px rgba(0,0,0,.6);
       }
     }
@@ -208,7 +204,7 @@
       &:not(.list-nested-item).selected > span,
       &.list-nested-item.selected > .list-item > span {
         // only use @color if it has enough contrast with the background
-        color: @fg-active;
+        color: @base-fg;
         text-shadow: none;
       }
 
