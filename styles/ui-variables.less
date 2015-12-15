@@ -49,10 +49,10 @@
 .ui-saturation();
 
 .ui-brightness() when (hsvvalue(@ui-theme-color) >= 50%) {
-  @ui-brightness: hsvvalue(@ui-theme-color) - 6%;
+  @ui-brightness: hsvvalue(@ui-theme-color) - 6%; // isotope-ui-light: lighter backgrounds
 }
 .ui-brightness() when (hsvvalue(@ui-theme-color) < 50%) {
-  @ui-brightness: hsvvalue(@ui-theme-color) + 80%;
+  @ui-brightness: hsvvalue(@ui-theme-color) + 80%; // isotope-ui-light: lighter backgrounds
 }
 .ui-brightness();
 
@@ -67,8 +67,8 @@
 @level-2-bg:  darken(@base-bg, 0%);
 @level-3-bg:  darken(@base-bg, 6%);
 
-@stroke: lighten(@base-fg, 36%);
-@item-views-stroke: lighten(@base-bg, 37%);
+@stroke: lighten(@base-fg, 36%); // isotope-ui-light: darker borders
+@item-views-stroke: lighten(@base-bg, 37%); // isotope-ui-light: darker borders
 
 @bg-info:    hsl(200, 60%, 50%);
 @bg-success: hsl(140, 60%, 50%);
@@ -77,8 +77,9 @@
 
 
 // foreground
-@base-fg: hsl(@ui-hue, @ui-saturation, min(24%, (@ui-brightness) / 2.8) );
+@base-fg: hsl(@ui-hue, @ui-saturation, min(24%, (@ui-brightness) / 2.8) ); // isotope-ui-light: darker foregrounds
 
+// isotope-ui-light: darker fonts
 @fg-subtle: fadeout(@base-fg, 18%);
 @fg-faded: fade(@base-fg, 24%);
 @fg-ignored:  fade(@base-fg, 48%);

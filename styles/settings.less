@@ -9,9 +9,26 @@
     max-width: 60rem;
   }
   .config-menu {
-    background: @level-3-bg;
+    background: @level-1-bg; // isotope-ui-light: lighter backgrounds
     .nav > li > a:hover {
       background: transparent;
+    }
+
+     // isotope-ui-light: easier to read config navigation menu
+    .nav > li {
+      a {
+        color: @base-fg;
+      }
+      &.active {
+        a {
+          color: @fg-selected;
+          background-color: @level-2-bg;
+          font-weight: bolder;
+        }
+      }
+    }
+    .nav > li > a:hover {
+      font-weight: bolder;
     }
   }
   .form-control {
@@ -50,9 +67,9 @@
 
   .package-card {
     font-size: inherit;
-    background: @level-2-bg;
+    background: @level-1-bg; // isotope-ui-light: lighter backgrounds
     &:hover {
-      background: @level-1-bg;
+      background: @level-2-bg; // isotope-ui-light: lighter backgrounds
     }
 
     .card-name {
@@ -67,6 +84,15 @@
     .meta-user .avatar {
       height: @component-line-height;
       width: @component-line-height;
+    }
+     // isotope-ui-light: easier to see install button
+    .meta-controls .install-button {
+      color: #fff;
+    }
+    .meta-controls .install-button.is-installing {
+      background-image: linear-gradient(to right, @level-2-bg 50%, @level-1-bg 50%);
+      color: @stroke;
+      border-color: @level-2-bg;
     }
     .meta-controls .status-indicator{
       max-height: @component-line-height;
