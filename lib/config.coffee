@@ -64,6 +64,9 @@ module.exports =
       else
         body.setAttribute('data-isotope-light-ui-minimal', 'false')
 
+    applyTabSizing = () ->
+      body.setAttribute('data-isotope-light-ui-tabsizing', atom.config.get('isotope-light-ui.tabSizing').toLowerCase())
+
 
     # run when atom is ready
 
@@ -75,6 +78,7 @@ module.exports =
     applyTooltipContrast()
     applyEditorFont()
     applyMinimalMode()
+    applyTabSizing()
 
 
     # run when configs change
@@ -111,3 +115,6 @@ module.exports =
 
     atom.config.onDidChange 'editor.fontFamily', ->
       applyEditorFont()
+
+    atom.config.onDidChange 'isotope-light-ui.tabSizing', ->
+      applyTabSizing()

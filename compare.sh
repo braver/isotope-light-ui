@@ -60,4 +60,5 @@ for file in styles/*; do
     compare "$file"
 done
 compare "lib/isotope-light-ui.coffee" "lib/isotope-ui.coffee"
+compare "lib/config.coffee" "lib/config.coffee"
 cleanup

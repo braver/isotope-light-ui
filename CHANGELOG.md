@@ -1,3 +1,6 @@
+# 2.8.0 - Syncing with isotope-ui
+* Used sync scripts with some manual edits to update to isotope-ui v2.8.5.
+
 # 2.2.7 - Syncing with isotope-ui
 * Used sync scripts to update to the latest from isotope-ui.
 * Added documentation for syncing with isotope-ui to the SYNC.md file.
